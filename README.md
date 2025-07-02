@@ -1,39 +1,73 @@
 # csv2tidal
 
-A command line tool for importing a list of Albums into your Tidal profile.
+A command-line tool to import individual **tracks** into **Tidal playlists** from a `.csv` file.  
+✅ Supports playlist overwrite prompt  
+✅ Adds only selected songs (not full albums)  
+✅ Includes a progress bar for visual feedback
 
-## Installation
+---
 
-Clone this git repository and then run:
+## 🛠️ Installation
+
+Clone the repository and install dependencies:
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-## CSV Format
+---
 
-the CSV file should be in format:
+## 📄 CSV Format
+
+Your `.csv` file must be UTF-8 encoded with **no header line** and each row in the format:
 
 ```csv
-artist,title,playlist
+artist,track title,playlist name
 ```
 
-The file must be UTF8 encoded and must not have a heading line. 
+✅ Example:
 
-## Usage
-
-To import your list of albums into you Tidal profile run:
-
-```sh
-python3 csv2tidal.py [file]
+```csv
+Clairo,4EVER,Favorite Songs
+Red Hot Chili Peppers,Californication,Summer Jams
 ```
 
-On first usage you will be asked to login into Tidal with the provided URL to register the API client. The session will be saved for future use, but when it expires you might be asked to login again.
+This will add **just those tracks** to the specified playlist.
 
-__Important!__
-The script is writing a file named `.session` after first login. Keep this file secret as it contains the session keys to login into your Tidal account. 
+---
 
+## ▶️ Usage
 
-## Credits
+Run the script like so:
 
-The inspiration to write this script came from [RZetko](https://gist.github.com/RZetko/71801a20188e842ef03bed3b6d7a297f), login code was borrowed from [spotify_to_tidal](https://github.com/timrae/spotify_to_tidal).
+```bash
+python3 csv2tidal.py path/to/your.csv
+```
+
+On first use, you'll be prompted to log in to Tidal via a provided link. A `.session` file will be saved for future authenticated use.
+
+---
+
+## ⚠️ Playlist Overwrite Warning
+
+This script will ask if you want to **delete all your existing playlists before import**. You can choose:
+
+- **Y** to delete and start clean
+- **N** to add to your existing playlists without deleting
+
+---
+
+## 🔐 Authentication Notes
+
+The script creates a `.session` file to cache your Tidal login.  
+Keep this file private — it contains your **access credentials**!
+
+---
+
+## 🙌 Credits
+
+Originally inspired by:
+- [RZetko's album importer](https://gist.github.com/RZetko/71801a20188e842ef03bed3b6d7a297f)
+- [spotify_to_tidal](https://github.com/timrae/spotify_to_tidal) (login system)
+
+Tweaks and enhancements by **[Tyler Fynboh](https://github.com/TylerFynboh)** — track-level support, error handling, and more!
