@@ -18,7 +18,7 @@ user = tidal_session.user
 existing_playlists = {pl.name: pl for pl in user.playlists()}
 created_playlists = {}
 
-# ✅ Count total rows to show % progress
+# Count total rows to show % progress
 with open(csvfile, encoding="utf8") as f:
     total_rows = sum(1 for _ in f)
 
