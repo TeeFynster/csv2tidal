@@ -70,4 +70,4 @@ Originally inspired by:
 - [RZetko's album importer](https://gist.github.com/RZetko/71801a20188e842ef03bed3b6d7a297f)
 - [spotify_to_tidal](https://github.com/timrae/spotify_to_tidal) (login system)
 
-Tweaks and enhancements by **[Tyler Fynboh](https://github.com/TylerFynboh)** — track-level support, error handling, and more!
+Tweaks and enhancements by **[Ty!](https://github.com/TeeFynster)** — track-level support, error handling, and more!
