@@ -15,7 +15,7 @@ python3 -m pip install -r requirements.txt
 the CSV file should be in format:
 
 ```csv
-artist,title
+artist,title,playlist
 ```
 
 The file must be UTF8 encoded and must not have a heading line. 
